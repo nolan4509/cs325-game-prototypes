@@ -4,6 +4,7 @@ GameStates.makeMainMenu = function( game, shared ) {
 
 	var music = null;
 	var playButton = null;
+    var background = null;
     
     function startGame(pointer) {
 
@@ -23,13 +24,17 @@ GameStates.makeMainMenu = function( game, shared ) {
             //	Here all we're doing is playing some music and adding a picture and button
             //	Naturally I expect you to do something significantly better :)
     
-            music = game.add.audio('titleMusic');
+            music = game.add.audio('startSound');
             music.play();
     
-            game.add.sprite(0, 0, 'titlePage');
+            background = game.add.sprite(0, 0, 'starfield');
+            background.scale.setTo(1.5, 1.5);
     
-            playButton = game.add.button( 303, 400, 'playButton', startGame, null, 'over', 'out', 'down');
+            playButton = game.add.button( 303, 400, 'playButton', startGame, null);
+            playButton.scale.setTo(0.5, 0.5);
     
+            var style = {font: "bold 64px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle"};
+            var text = game.add.text(150, 200, "Save the Princess", style);
         },
     
         update: function () {
