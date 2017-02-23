@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>Nolan's Game</title>
-    <script src="js/phaser.js"></script>
-    <script src="js/main.js"></script>
+	<meta charset="UTF-8" />
+	<title>Phaser Basic Project Template</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
 
 <style>
 body
@@ -22,70 +29,73 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Space Cowboy</h2>
+<h2>Your game title</h2>
 <ul>
 
 <li><strong>High Concept:</strong>
-Use your mouse to move the cowboy around to avoid being hit by asteroids.
+A one-sentence summary of your game.
 </li>
 
 <li><strong>Theme:</strong>
-Cowboys and Asteroids/Space
+State which of the Storymatic themes you used.
 </li>
 
 <li><strong>Mandated Variety:</strong>
-Action
+State which input, randomness, genre, and play style you used in this prototype.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-Players will have a fun time since they will have no way of knowing from which direction and how fast each asteroid will be traveling, which will make it more challenging.
+What experience do you want players to have when playing your game?
 </li>
 
 <li><strong>Gameplay:</strong>
-The player may use their mouse to move the cowboy around in order to avoid colliding with random asteroids flying across the screen. Currently, the ability to click and shoot the asteroids is not in the game prototype, but is planned for the future. If you collide with an asteroid, you lose.
+A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
 </li>
 
 <li><strong>Prototype Goal:</strong>
-Collisions and working with spritesheets.
+What game mechanic is this prototype evaluating?
 </li>
 
 <li><strong>Features:</strong>
-The acceleration and speed of the cowboy are set in a way that makes him a little bit more difficult to control if you are just throwing your mouse all over the place to dodge the asteroids, which adds a little more fun and challenge to the game.
+What are the unique aspects of your game that set it apart?
 </li>
 
 <li><strong>Setting/Premise:</strong>
-The game is set in space, and you are the last space cowboy, a cowboy with the ability to breathe and fly around in space, however there's an asteroid field coming your way, and you must dodge them all to make it through.
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, put it here. If the game is abstract, then say so.
 </li>
 
 <li><strong>Story:</strong>
-N/A
+If the game has a story (or you envision a story for the full game), summarize it in a paragraph. How will the dramatic tension interact with the gameplay tension?
 </li>
 
 <li><strong>Target Audience:</strong>
-This game attempts to attract a younger audience, such as 8-10.
+A single sentence that describes the demographic you're trying to reach.
 </li>
 
 <li><strong>Play Time:</strong>
-0-2 minutes.
+How long does your game take to play?
 </li>
 
 <li><strong>Strategies:</strong>
-Varrying how fast the players move their mouse around for different situations and the spacing between the asteroids as they come.
+What player strategies do you expect will be effective at playing this game?
 </li>
 
 <li><strong>Prototype Assets:</strong>
+Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
 <ul>
-<li>Cowboy: <a href="http://opengameart.org/content/cowboy">Cowboy</a></li>
-<li>Asteroid: <a href="http://www.widgetworx.com/projects/sl.html">Asteroid</a></li>
-<li>Background: <a href="https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/games/invaders/starfield.png">Starfield</a></li>
-<li>Explosion: <a href="https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/misc/explode1.png">Explosion</a></li>
-<li>Music: <a href="http://opengameart.org/content/riding-the-supernova">Music</a></li>
-<li>Bullet: <a href="https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/misc/bullet1.png">Bullet</a></li>
+<li>Loading screen: self-made</li>
+<li>Puppy image: self-made</li>
+<li>Button: Phaser example <a href="https://phaser.io/examples/v2/buttons/action-on-click">Action On Click</a></li>
+<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+<li>Music: "Poppers and Prosecco" Kevin MacLeod (<a href="incompetech.com">incompetech.com</a>). Licensed under <a href="http://creativecommons.org/licenses/by/3.0/">Creative Commons: By Attribution 3.0 License</a></li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Since I didn't realize we were allowed to borrow code from examples until it was too late, all the code in my game was written by me. I did explore examples to learn how to use phaser, such as reading spritesheets examples, but the code itself was then written by me trying to make sure I didn't copy it.
+Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+<ul>
+<li>The code for this example is adapted from the <a href="https://github.com/photonstorm/phaser/tree/v2.6.2/resources/Project%20Templates/Basic">Phaser Basic Project Template</a></li>
+</ul>
 </li>
 
 </ul>
