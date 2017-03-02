@@ -34,7 +34,7 @@ GameStates.makeMainMenu = function( game, shared ) {
             playButton.scale.setTo(0.5, 0.5);
     
             var style = {font: "bold 14px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle"};
-            var text = game.add.text(100, 100, "Don't let the skeletons get to your house!", style);
+            var text = game.add.text(100, 100, "Don't let the bats get to your house!", style);
         },
     
         update: function () {

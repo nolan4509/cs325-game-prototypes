@@ -27,14 +27,15 @@ GameStates.makePreloader = function( game ) {
 
             //	+ lots of other required assets here
             this.game.load.spritesheet('hero', 'assets/player.png', 16, 16);
-            this.game.load.spritesheet('boss', 'assets/skeleton.png', 16, 16);
+            this.game.load.spritesheet('boss', 'assets/bat.png', 32, 32);
             this.game.load.spritesheet('fireball', 'assets/fireball.png', 64, 64);
-            this.game.load.spritesheet('boom', 'assets/explode.png', 128, 128)
+            this.game.load.spritesheet('boom', 'assets/explode.png', 128, 128);
             
             this.game.load.audio('fireballSound', 'assets/fireball.wav');
             this.game.load.audio('startSound', 'assets/Soliloquy.mp3');
             this.game.load.audio('winSound', 'assets/win.wav');
-            this.game.load.audio('music', 'assets/music.mp3')
+            this.game.load.audio('music', 'assets/music.mp3');
+            this.game.load.audio('loseSound', 'assets/lose.wav');
 
             this.game.load.tilemap('tilemap', 'assets/Game4Map.json', null, Phaser.Tilemap.TILED_JSON);
 

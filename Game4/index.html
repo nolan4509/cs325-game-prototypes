@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Nolan's Game 3</title>
+	<title>Nolan's Game 4</title>
 	<script src="js/phaser.min.js"></script>
 	<!-- Boot.js must come first since it creates the BasicGame object
 	that stores all the states. -->
@@ -29,57 +29,58 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<li><strong>Controls:</strong></li>
+<li>Arrow keys: Movement</li>
+<li>Spacebar: Shoot</li>
+<h2>Bat Attack</h2>
 <ul>
-
 <li><strong>High Concept:</strong>
-You are the hero and will stop at nothing to rescue the princess from the boss on the other side of the world.
-</li>
+You are a farmer who must save and preserve your home and farm from the oncoming horde of bats!</li>
 
 <li><strong>Theme:</strong>
-Person who will do whatever it takes
+Preservationist
 </li>
 
 <li><strong>Mandated Variety:</strong>
 Input: Keyboard
-Randomness: deterministic
-Genre: Platformer, side-scroller, shooter?
+Randomness: a lot of randomness with enemy bat spawns
+Genre: Platformer, overhead, shooter
 Play Style: Explorer, achiever
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-Players will have a fun time with this almost mario-like platformer game and will have a good laugh when they run into the boss
-and dissapear xD
+Players will have a fun time with this almost top-down zelda-like game, and will enjoy giant static
+explosions when killing the bats. It's also nice to walk around the map.
 </li>
 
 <li><strong>Gameplay:</strong>
-The player can use the left and right arrow keys to move in the left and right directions. The player can use
-up arrow key to jump, and the space bar to shoot a fireball. Details about items that weren't successfully implemented
-in the prototype can be found in the features section.
+The player can use the left and right arrow keys to move in the left and right directions, as well as the up and 
+down keys to move up and down. The player can use the space bar to shoot a fireball. 
 </li>
 
 <li><strong>Prototype Goal:</strong>
-Spritesheets, collisions, tilemaps, dying out of bounds, killing enemy sprites, game states
+Spritesheets, collisions, tilemaps, losing when enemies reach out of bounds, killing enemy sprites, game states
 </li>
 
 <li><strong>Features:</strong>
-For one I spent hours trying to get the tilemap and hero interaction on that map to work. I have also made
-it so you can shoot fireballs from your player. Unfortunately I believe I set a slightly too ambitious goal for my game.
-My hope was to have the boss be shooting fireballs with a angle variance at you, the hero, and you would shoot fireballs back 
-at him once you made it across, and you would have to dodge his fire and hit him in order to then safely get by to where
-the princess would be standing. I couldn't get the collisions between the fireball and the boss to work, so all you need to do is run into him,
-but then the player also dissapears for some reason. And, I can't get the princess to show up, at this point I'm just too frustrated
-to keep trying, but overall I'm happy with what I did accomoplish with this game.
+I was a lot more successful with this game than my last, I got almost everything I hoped for working. You are 
+able to control the player using the arrow keys, and shoot fireballs in different directions based on the diretion
+you are facing using the spacebar. The player also obviously can't walk across water, over the cliff, or through any 
+trees. You CAN go over the bridge, try it out once you kill all of the bats!!!
+I have a group of enemies that all move and are animated. 
+The one thing that I wasnt able to get working, was the explosion animation when you destroy a bat. The bat dissapears
+and the explosion first image takes its place, but it doesn't actually play the animation, no matter what I tried..hence the code 
+around there looks pretty messy.
 </li>
 
 <li><strong>Setting/Premise:</strong>
-The game is certainly more abstract, and doesn't necessarily have a specific setting. You are a mage who has 
-mastered the art of the fireball, and are the only one willing to stand up to the bossman to save the princess.
+The game is certainly more abstract, and doesn't necessarily have a specific setting. You are a mage and 
+a farmer, and want to preserve your home and crops.
 </li>
 
 <li><strong>Story:</strong>
-The princess has been taken away by the evil bossman. Naturally, you are the only one who is willing to stand
-up to the bossman, so you must do everything in your power to save the princess.
+You exited your house to begin watering the plants and see there is an army of bats headed towards you, 
+you must preserve your home!
 </li>
 
 <li><strong>Target Audience:</strong>
@@ -87,29 +88,31 @@ Young children
 </li>
 
 <li><strong>Play Time:</strong>
-0-2 minutes
+5-20 seconds
 </li>
 
 <li><strong>Strategies:</strong>
-Players will have to time their jumps right in order to safely make it across the dangerous world.
-</li>
+Players must use quick thinking to determine how to shoot all of the bats before they reach the top.</li>
 
 <li><strong>Prototype Assets:</strong>
 <ul>
-<li>Hero and Boss: <a href="http://opengameart.org/content/four-characters-my-lpc-entries">Hero and Boss</a></li>
-<li>All Sound: <a href="http://themushroomkingdom.net/wav.shtml">Mario <3</a></li>
-<li>Fireball: <a href="http://opengameart.org/content/homemade-flame">Fireball</a></li>
-<li>Menu: <a href="http://opengameart.org/content/start-restart-buttons">Button</a></li>
-<li>Sky: <a href="http://opengameart.org/content/sky-backdrop">Sky</a></li>
-<li>Tileset: <a href="http://opengameart.org/content/greenlands-tile-set">Tileset</a></li>
-<li>Princess (Who doesn't wan't to show up....: <a href="http://opengameart.org/content/sara-wizard">Princess</a></li>
+<li>Game Music: <a href="http://opengameart.org/content/heroic-demise-updated-version">Click Me</a></li>
+<li>Main Menu Music: <a href="http://opengameart.org/content/soliloquy">Click Me</a></li>
+<li>Fireball, win, and lose sounds: <a href="http://themushroomkingdom.net/wav.shtml">Click Me</a></li>
+<li>Map Textures: <a href="http://opengameart.org/content/zelda-like-tilesets-and-sprites">Click Me</a></li>
+<li>Fireball: <a href="http://opengameart.org/content/fireball-spell">Click Me</a></li>
+<li>Player: <a href="http://opengameart.org/content/tiny-16-expanded-character-sprites">Click Me</a></li>
+<li>Bat: <a href="http://opengameart.org/content/bat-sprite">Click Me</a></li>
+<li>Explosion: <a href="https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/misc/explode1.png">Click Me</a></li>
+<li>Main Menu Background: <a href="https://github.com/photonstorm/phaser-examples/blob/master/examples/assets/games/invaders/starfield.png">Click Me</a></li>
+<li>Start Button: <a href="http://opengameart.org/content/start-restart-buttons">Click Me</a></li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
 <ul>
 <li>The code for this example is adapted from the <a href="https://github.com/GMU-CS325/cs325-game-prototypes/tree/master/template-gamestate-functional">Phaser Functional Gamestate Template</a></li>
+<li>This game most closely resembles a mix between a tower defense game and a top-down zelda game.
 </ul>
 </li>
 

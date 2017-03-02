@@ -2,20 +2,17 @@
 
 GameStates.makeGame = function( game, shared ) {
     // Create your own variables.
-    var bouncy = null;
     var hero = null;
     var fireball = null;
     var boss = null;
     var jumpTimer = 0;
-    var doh = null;
     var fireballSound = null;
     var jumpSound = null;
     var loseSound = null;
-    var pressStartSound = null;
     var winSound = null;
-    var princess = null;
     var music = null;
     var facing = 'down';
+    var batsAlive = 6;
     function quitGame() {
 
         //  Here you should destroy anything you no longer need.
@@ -26,19 +23,30 @@ GameStates.makeGame = function( game, shared ) {
 
     }
     function GameOver() {
-        
+        batsAlive = 6;
+        music.stop();
         loseSound.play();
         game.state.start('MainMenu');
     }
     function bossHit(fireball, boss){
         fireball.kill();
         boss.kill();
-        //boss.destroy();
-        winSound.play();
-            
+        
+        //Explosions
+        var explosions = game.add.group();
+        explosions.createMultiple(6, 'boom');
+        boss.animations.add('boom');
+        var boom = explosions.getFirstExists(false);
+        boom.reset(boss.body.x-50, boss.body.y-50);
+        boom.animations.play('boom');
         boss.animations.play('boom');
+        batsAlive--;
+        if(batsAlive == 0){
+            music.stop();
+            winSound.play();
+        }
+        
     }
-
     return {
     
         create: function () {
@@ -53,8 +61,6 @@ GameStates.makeGame = function( game, shared ) {
             music.play();
 
 
-            //Change the background colour
-            //this.game.stage.backgroundColor = "#a9f0ff";
             //Add the tilemap and tileset image. The first parameter in addTilesetImage
             //is the name you gave the tilesheet when importing it into Tiled, the second
             //is the key to the asset in Phaser
@@ -91,6 +97,7 @@ GameStates.makeGame = function( game, shared ) {
             //Enable cursor keys so we can create some controls
             this.cursors = this.game.input.keyboard.createCursorKeys();
             this.shootkey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
             
 
             //Fireball
@@ -110,25 +117,40 @@ GameStates.makeGame = function( game, shared ) {
             fireball.callAll('animations.add', 'animations', 'shootleft', [0, 1, 2, 3, 4, 5, 6, 7], 20, true);
             fireball.callAll('animations.add', 'animations', 'shootright', [32, 33, 34, 35, 36, 37, 38, 39], 20, true);
             
+            
 
-            //Explosions
-            var explosions = game.add.group();
-            for (var i = 0; i < 10; i++)
-            {
-                var explosionAnimation = explosions.create(0, 0, 'boom', [0], false);
-                explosionAnimation.anchor.setTo(0.5, 0.5);
-                explosionAnimation.animations.add('boom');
+            //Boss
+            boss = game.add.group();
+            boss.enableBody = true;
+            boss.physicsBodyType = Phaser.Physics.ARCADE;
+            boss.createMultiple(10, 'boss');
+
+            
+            //Desperate attempts to make the enemies...
+            var x = null;
+            for(x = 0; x<6; x++){
+                var bats = this.game.add.sprite(Math.random() *400+10, this.game.world.centerY+200, 'boss');
+                bats.checkWorldBounds = true;
+                bats.events.onOutOfBounds.add(GameOver, this);
+                bats.animations.add('boom', null, 20);
+                bats.animations.play('boom');
+                boss.add(bats);
             }
-
-
+            boss.setAll('anchor.x', 0.5);
+            boss.setAll('anchor.y', 0.5);
+            boss.setAll('outOfBoundsKill', true);
+            boss.setAll('checkWorldBounds', true);
+            boss.callAll('animations.add', 'animations', 'fly', [8, 9, 10, 11], 20, true);
+            boss.callAll('play', null, 'fly');
+            boss.setAll('body.velocity.y', -50);
 
         },
     
+
         update: function () {
             //Make the sprite collide with the ground layer
             this.game.physics.arcade.collide(hero, this.ObjectLayer);
-            this.game.physics.arcade.collide(boss, this.ObjectLayer);
-            this.game.physics.arcade.overlap(fireball, this.ObjectLayers);
+            this.game.physics.arcade.collide(fireball, this.ObjectLayers);
 
             this.game.physics.arcade.overlap(fireball, boss, bossHit, null, this);
 
@@ -140,7 +162,7 @@ GameStates.makeGame = function( game, shared ) {
                     hero.body.velocity.x = 0;
                 }
                 facing = 'up';
-                hero.body.velocity.y = -75;
+                hero.body.velocity.y = -100;
                 hero.animations.play('up');
             }
             else if(this.cursors.down.isDown){
@@ -151,7 +173,7 @@ GameStates.makeGame = function( game, shared ) {
                     hero.body.velocity.x = 0;
                 }
                 facing = 'down';
-                hero.body.velocity.y = 75;
+                hero.body.velocity.y = 100;
                 hero.animations.play('down');
             }
             else if(this.cursors.right.isDown){
@@ -162,7 +184,7 @@ GameStates.makeGame = function( game, shared ) {
                     hero.body.velocity.y = 0;
                 }
                 facing = 'right';
-                hero.body.velocity.x = 75;
+                hero.body.velocity.x = 100;
                 hero.animations.play('right');
             }
             else if(this.cursors.left.isDown){
@@ -173,7 +195,7 @@ GameStates.makeGame = function( game, shared ) {
                     hero.body.velocity.y = 0;
                 }
                 facing = 'left';
-                hero.body.velocity.x = -75;
+                hero.body.velocity.x = -100;
                 hero.animations.play('left');
             }
             else{
@@ -182,7 +204,6 @@ GameStates.makeGame = function( game, shared ) {
                 hero.animations.stop();
             }
             if(this.shootkey.isDown && game.time.now > jumpTimer){
-                //fireball.fire();
                 fireballSound.play();
                 jumpTimer = game.time.now + 750;
                 var bullet = fireball.getFirstExists(false);
@@ -190,19 +211,19 @@ GameStates.makeGame = function( game, shared ) {
                 switch(facing){
                     case 'up':
                         bullet.animations.play('shootup');
-                        bullet.body.velocity.y = -150;
+                        bullet.body.velocity.y = -200;
                         break;
                     case 'right':
                         bullet.animations.play('shootright');
-                        bullet.body.velocity.x = 150;
+                        bullet.body.velocity.x = 200;
                         break;
                     case 'left':
                         bullet.animations.play('shootleft');
-                        bullet.body.velocity.x = -150;
+                        bullet.body.velocity.x = -200;
                         break;
                     default:
                         bullet.animations.play('shootdown');
-                        bullet.body.velocity.y = 150;
+                        bullet.body.velocity.y = 200;
                 }
             }
         }
