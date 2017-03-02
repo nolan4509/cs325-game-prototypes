@@ -30,11 +30,11 @@ GameStates.makeMainMenu = function( game, shared ) {
             background = game.add.sprite(0, 0, 'starfield');
             background.scale.setTo(1.5, 1.5);
     
-            playButton = game.add.button( 303, 400, 'playButton', startGame, null);
+            playButton = game.add.button( 100, 200, 'playButton', startGame, null);
             playButton.scale.setTo(0.5, 0.5);
     
-            var style = {font: "bold 32px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle"};
-            var text = game.add.text(100, 200, "Don't let the skeletons get to your house!", style);
+            var style = {font: "bold 14px Arial", fill: "#fff", boundsAlignH: "center", boundsAlignV: "middle"};
+            var text = game.add.text(100, 100, "Don't let the skeletons get to your house!", style);
         },
     
         update: function () {

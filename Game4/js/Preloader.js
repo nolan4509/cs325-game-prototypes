@@ -15,7 +15,7 @@ GameStates.makePreloader = function( game ) {
             //	A nice sparkly background and a loading progress bar
             background = this.game.add.sprite(0, 0, 'preloaderBackground');
             background.scale.setTo(1.5, 1.5);
-            preloadBar = this.game.add.sprite(300, 400, 'preloaderBar');
+            preloadBar = this.game.add.sprite(200, 200, 'preloaderBar');
     
             //	This sets the preloadBar sprite as a loader sprite.
             //	What that does is automatically crop the sprite from 0 to full-width

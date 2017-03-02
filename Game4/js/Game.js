@@ -189,19 +189,19 @@ GameStates.makeGame = function( game, shared ) {
                 bullet.reset(hero.x, hero.y);
                 switch(facing){
                     case 'up':
-                        fireball.callAll('play', null, 'shootup');
+                        bullet.animations.play('shootup');
                         bullet.body.velocity.y = -150;
                         break;
                     case 'right':
-                        fireball.callAll('play', null, 'shootright');
+                        bullet.animations.play('shootright');
                         bullet.body.velocity.x = 150;
                         break;
                     case 'left':
-                        fireball.callAll('play', null, 'shootleft');
+                        bullet.animations.play('shootleft');
                         bullet.body.velocity.x = -150;
                         break;
                     default:
-                        fireball.callAll('play', null, 'shootdown');
+                        bullet.animations.play('shootdown');
                         bullet.body.velocity.y = 150;
                 }
             }
