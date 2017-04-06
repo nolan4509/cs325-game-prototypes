@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dots and Boxes</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/Board.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+
+<h2>Dots and Boxes</h2>
+<ul>
+
+<li><strong>Disclaimer:</strong>
+This game is unfortunately not working. I spent hours and tried very hard to try and get the grid itself working, however I was never able to get the lines to properly show up and I have no idea why. After awhile I simply couldn't figure it out. I'd be more than happy to come to office hours to work with someone to fix my code, since I can't figure out how to make the lines work. You can see the progress I made in the code.
+
+<li><strong>High Concept:</strong>
+Players will attempt to get the majority of sides around a box to claim the box as their own, and whoever finishes the game with the most boxes wins.</li>
+
+<li><strong>Theme:</strong>
+Iteration Sequence
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: Mouse
+Randomness: Deterministic
+Genre: Puzzle
+Play Style: Strategist
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+I want players to have try and conjure up strategies and think ahead of their opponents in order to outwit their competition and win. 
+</li>
+
+<li><strong>Gameplay:</strong>
+1.	Each turn, every player will click on the line they hope to draw. 
+2.	Once every player has hit the line they wish to draw, the game will then reveal and fill in the selected lines. Next turn begins.(Step 1 again)
+3.	If two or more players are attempting to draw a line on the same spot, the game will randomly decide between the players who gets the spot. The players who don't get the spot do not get any lines this turn, as their chosen spot was taken.
+4.	In order to successfully claim a box, a player has to have the majority of the sides drawn in their favor. For example, if a box has two sides drawn by player 1, and two sides drawn by player 2, then the box wouldn’t count for anyone. If it was a 3 to 1 side ratio, the person with 3 sides gets the box. It does not matter which person drew the last line.
+5.	Once the board has been filled and there are no more places to draw a line, players count how many boxes they have, and the person with the most wins.
+6.	The board itself consists of a 5x5 grid of dots, which are used to draw the lines in between. This can be mediated to adjust the average playtime of the game. Players can only draw a line that goes from one dot to any dot adjacent to it, and no further, no diagonals.
+
+</li>
+
+<li><strong>Prototype Goal:</strong>
+To make a working digital game reflecting my analog prototype.
+</li>
+
+<li><strong>Features:</strong>
+This game is similar to the standard dots and boxes game, however it has a few twists on it. One twist is that both players choose the line they want to make without the other player knowing that line, and then both players show them at the same time allowing the chance to possibly contest over a spot for a line. Another twist is that instead of getting a point just for completing a square, you now instead have to make sure you have the majority of sides of that square, as opposed to just simply completing it.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+N/A
+</li>
+
+<li><strong>Story:</strong>
+N/A
+</li>
+
+<li><strong>Target Audience:</strong>
+Anyone
+</li>
+
+<li><strong>Play Time:</strong>
+5-7 minutes
+</li>
+
+<li><strong>Strategies:</strong>
+Players must use quick thinking to determine how to shoot all of the bats before they reach the top.</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li>Main Menu Music: <a href="http://opengameart.org/content/soliloquy">Click Me</a></li>
+<li>Start Button: <a href="http://opengameart.org/content/start-restart-buttons">Click Me</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+<ul>
+<li>The code for this example is adapted from the <a href="https://github.com/GMU-CS325/cs325-game-prototypes/tree/master/template-gamestate-functional">Phaser Functional Gamestate Template</a></li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
