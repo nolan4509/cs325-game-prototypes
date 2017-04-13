@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Dots and Boxes</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game.js"></script>
+	<script src="js/Board.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+
+<h2>Dots and Boxes</h2>
+<ul>
+
+<li><strong>High Concept:</strong>
+The player will connect the dots of the same color in as long of lines as possible in order to get the highest score they can in 20 moves. Can you beat my high score of 400???</li>
+
+<li><strong>Theme:</strong>
+Iteration Sequence
+</li>
+
+<li><strong>Mandated Variety:</strong>
+Input: Mouse
+Randomness: Deterministic
+Genre: Puzzle
+Play Style: Strategist
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players will have to think ahead in order to get the biggest groupings or potentially see an opportunity to create a loop to clear the board of that color.
+</li>
+
+<li><strong>Gameplay:</strong>
+1. Each turn, the player will draw a line from however many adjacent dots of the same color they want.<br>
+2. The score gets added however many dots the player connected. <br>
+3. If the player was able to connect the dots in such a way that it can form a loop, or it just connects back to itself, every dot of the color is removed from the board.<br>
+4. When a dot is removed, all dots above it will shift down and a new random color dot will appear now on the top to maintain the original square layout.<br>
+
+</li>
+
+<li><strong>Prototype Goal:</strong>
+To make a working digital game reflecting my analog prototype.
+</li>
+
+<li><strong>Features:</strong>
+This game allows you to acheive a high score and attempt to beat it. One extra twist on this game is that if you make a line connect back to itself when connecting the dots it will clear the entire board of that color.
+This will allow players opportunities to narrow down the colors on the board in order to obtain a ton of points.
+</li>
+
+<li><strong>Setting/Premise:</strong>
+N/A
+</li>
+
+<li><strong>Story:</strong>
+N/A
+</li>
+
+<li><strong>Target Audience:</strong>
+Anyone
+</li>
+
+<li><strong>Play Time:</strong>
+5-7 minutes
+</li>
+
+<li><strong>Strategies:</strong>
+Players must use quick thinking to determine how to shoot all of the bats before they reach the top.</li>
+
+<li><strong>Prototype Assets:</strong>
+<ul>
+<li><a href="https://opengameart.org/content/arcade-level-tracks-8-bitchiptune">Main Menu and Game Music</a></li>
+<li><a href="https://opengameart.org/content/loading-bar">Loading Bar</a></li>
+<li><a href="https://opengameart.org/content/play-letters">Play Button</a></li>
+<li><a href="http://www.fontspace.com/charles-minow/times-square">Font</a></li>
+<li><a href="http://www.orangefreesounds.com/bell-tone/">Bell Sound</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+<ul>
+<li>The code for this example is adapted from the <a href="https://github.com/GMU-CS325/cs325-game-prototypes/tree/master/template-gamestate-functional">Phaser Functional Gamestate Template</a></li>
+<li>I changed a lot from what I had in my digital prototype. Ultimately I wasn't able to implement what I had originally wanted to with my analog prototype, but I stuck to my main mechanic with connecting dots and 
+instead made a fun singleplayer game instead. I played a lot more with bitmapdata in this project and used data structures such as a 2D array in order to help keep track of dot positioning. I'm very happy with the outcome of this
+especially compared to my last attempt.</li>
+</ul>
+</li>
+
+</ul>
+</div>
+</body>
+</html>
