@@ -43,44 +43,35 @@ Person who glows in the dark.
 
 <li><strong>Mandated Variety:</strong>
 Input: Keyboard
-Randomness: a lot of randomness with enemy bat spawns
-Genre: Platformer, overhead, shooter
+Randomness: No randomness
+Genre: Overhead, puzzle, side scroller (maybe?)
 Play Style: Explorer, achiever
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-Players will have a fun time with this almost top-down zelda-like game, and will enjoy giant static
-explosions when killing the bats. It's also nice to walk around the map.
+Players will have a fun challenge trying to navigate through the maze with an exciting twist of only being able to see a 
+short distance around themselves due to their ability to glow in the dark!
 </li>
 
 <li><strong>Gameplay:</strong>
-The player can use the left and right arrow keys to move in the left and right directions, as well as the up and 
-down keys to move up and down. The player can use the space bar to shoot a fireball. 
+TThe player will use the arrow keys to navigate around the maze.
 </li>
 
 <li><strong>Prototype Goal:</strong>
-Spritesheets, collisions, tilemaps, losing when enemies reach out of bounds, killing enemy sprites, game states
+Tilemaps, graphics and masking, bitmapdata from tileset data (not going well xD)
 </li>
 
 <li><strong>Features:</strong>
-I was a lot more successful with this game than my last, I got almost everything I hoped for working. You are 
-able to control the player using the arrow keys, and shoot fireballs in different directions based on the diretion
-you are facing using the spacebar. The player also obviously can't walk across water, over the cliff, or through any 
-trees. You CAN go over the bridge, try it out once you kill all of the bats!!!
-I have a group of enemies that all move and are animated. 
-The one thing that I wasnt able to get working, was the explosion animation when you destroy a bat. The bat dissapears
-and the explosion first image takes its place, but it doesn't actually play the animation, no matter what I tried..hence the code 
-around there looks pretty messy.
+Currently there are a limited amount of features with this game. I spent the majority of my time trying to adjust the game world scale in order to get
+the effect I wanted with limited visibility, but as Professor Gingold and I both noticed, it is apparently a known and unsolved issue with scaling the game world causing collision issues all across the board. There are a couple of workarounds I am planning on trying for my iteration, but will require me to recreate the map of my game entirely which is why I didn't have the time to implement that in this game, so instead I simply made the window size smaller. 
 </li>
 
 <li><strong>Setting/Premise:</strong>
-The game is certainly more abstract, and doesn't necessarily have a specific setting. You are a mage and 
-a farmer, and want to preserve your home and crops.
+The game is certainly more abstract, and doesn't necessarily have a specific setting. You are an great explorer due to your ability to glow in the dark, and you have finally discovered a famous maze that according to legend holds a very large treasure.
 </li>
 
 <li><strong>Story:</strong>
-You exited your house to begin watering the plants and see there is an army of bats headed towards you, 
-you must preserve your home!
+You have discovered a famous maze that according to legend holds a very large treasure. Being the explorer you are, you decide to wander in hoping to best the maze and claim the treasure for your own. 
 </li>
 
 <li><strong>Target Audience:</strong>
@@ -88,11 +79,11 @@ Young children
 </li>
 
 <li><strong>Play Time:</strong>
-5-20 seconds
+1-3 Minutes (Hard to guess since I made the maze and therefor know it like the back of my hand)
 </li>
 
 <li><strong>Strategies:</strong>
-Players must use quick thinking to determine how to shoot all of the bats before they reach the top.</li>
+Players will have to try and create the map of the maze in their head to successfully navigate it without backtracking over and over.</li>
 
 <li><strong>Prototype Assets:</strong>
 <ul>
@@ -110,7 +101,7 @@ Players must use quick thinking to determine how to shoot all of the bats before
 <li><strong>Prototype Closest Other Game:</strong>
 <ul>
 <li>The code for this example is adapted from the <a href="https://github.com/GMU-CS325/cs325-game-prototypes/tree/master/template-gamestate-functional">Phaser Functional Gamestate Template</a></li>
-<li>This game most closely resembles a mix between a tower defense game and a top-down zelda game.
+<li>This game most closely resembles a maze crawler with a twist of limited vision.
 </ul>
 </li>
 
